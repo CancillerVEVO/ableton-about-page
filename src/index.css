@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+.main {
+  max-width: 100rem;
+  margin-inline: auto;
+}
+
+/* Start of - Header */
+.main-nav {
+  padding: 0;
+}
+.main-nav__content {
+  width: 100%;
+  padding: 0 2.3rem 0 1rem;
+}
+.main-nav__logo {
+  margin: 0 0 0 2rem;
+}
+
+.main-nav nav {
+  display: flex;
+  align-items: center;
+}
+.main-nav__link-list {
+  display: flex;
+  width: 100%;
+}
+.main-nav__link-list__item {
+  list-style: none;
+  margin: 0 0.625rem 0 0.625rem;
+  padding: 0 0.6rem 0 0.6rem;
+  font-size: 1.1rem;
+}
+.main-nav__link-list a {
+  text-decoration: none;
+  color: black;
+}
+.main-nav__logo__image {
+  width: 4rem;
+}
+
+.main-nav__link-list__try {
+  margin-left: auto;
+}
+.main-nav__link-list__try a {
+  color: blue;
+  font-weight: bold;
+}
+.main-nav__link-list__account a {
+  font-weight: 500;
+}
+
+.main-nav__more-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  color: #ff764d;
+}
+
+.main-nav__icon {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+/* End of - Header */
