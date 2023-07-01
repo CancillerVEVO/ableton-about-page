@@ -5,7 +5,7 @@ const Header = () => {
         <a href="#" className="main-nav__logo">
           <img
             className="main-nav__logo__image"
-            src="../images/abletonlive-svgrepo-com.svg"
+            src="./abletonlive-svgrepo-com.svg"
             alt="ableton logo"
           />
         </a>
