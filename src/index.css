@@ -23,6 +23,11 @@ body {
 .main-nav__primary {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
+  position: relative;
+}
+.main-nav__logo-link {
+  position: absolute;
+  padding-left: 1.2rem;
 }
 .main-nav__primary-wrapper {
   width: 100%;
@@ -36,7 +41,7 @@ body {
 .main-nav__link-list-primary {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  padding-left: 5.5rem;
 }
 .main-nav__list-item {
   list-style: none;
@@ -56,6 +61,10 @@ body {
   color: #0000ff;
   font-weight: bold;
 }
+.main-nav__more[aria-expanded="false"] {
+  display: none;
+}
+
 .main-nav__list-item__more {
   border: none;
   background: none;
@@ -68,7 +77,7 @@ body {
   padding: 0 0 0 2.5rem;
 }
 .main-nav__more {
-  padding: 1.5rem 2.5rem 3.5rem 2.5rem;
+  padding: 1.5rem 2.5rem 3.5rem 1.5rem;
 }
 .is-selected {
   color: #ff764d;
@@ -109,10 +118,60 @@ body {
     cursor: pointer;
     color: inherit;
     font-size: larger;
-    padding: 0 1rem 0 1rem;
+    padding: 0 2rem 0 5.5rem;
+  }
+  .main-nav__primary-wrapper {
+    margin-top: 1rem;
+    font-size: large;
   }
 
-  .main-nav__primary-wrapper {
+  .main-nav__link-list-primary {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1.5rem;
+    font-weight: 600;
+    gap: 1rem;
+  }
+
+  .main-nav__list-item {
+    margin: 0;
+  }
+  .main-nav__list-item__more {
     display: none;
+  }
+  .list-item-more {
+    display: none;
+  }
+
+  .main-nav__list-item__try {
+    font-weight: inherit;
+    color: inherit;
+  }
+  .main-nav__more {
+    padding-top: 0;
+    padding-left: 1.5rem;
+  }
+  .main-nav__link-list {
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 500;
+    font-size: small;
+    gap: 1rem;
+  }
+  .main-nav__section-heading {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: large;
+  }
+  .main-nav__section-bottom {
+    padding-top: 0;
+  }
+  .main-nav__link-list-grid {
+    font-size: small;
+    margin-top: 1rem;
+  }
+  .main-nav__more[aria-expanded="false"] {
+    display: block;
   }
 }
