@@ -119,10 +119,8 @@ body {
     color: inherit;
     font-size: larger;
     padding: 0 2rem 0 5.5rem;
-  }
-  .main-nav__primary-wrapper {
-    margin-top: 1rem;
-    font-size: large;
+    position: absolute;
+    z-index: 20;
   }
 
   .main-nav__link-list-primary {
@@ -173,5 +171,23 @@ body {
   }
   .main-nav__more[aria-expanded="false"] {
     display: block;
+  }
+
+  .main-nav[aria-expanded="true"] {
+    background: #0000ff;
+    color: #fff;
+  }
+
+  .main-nav__primary-wrapper {
+    font-size: large;
+
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    transform: translateY(-100%);
+  }
+
+  .main-nav__primary-wrapper[aria-expanded="true"] {
+    margin-top: 3rem;
+    transform: translateY(0);
   }
 }

@@ -1,7 +1,10 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
+  const [primaryExpanded, setPrimaryExpanded] = useState(false);
+  const primaryElement = useRef<HTMLDivElement>(null);
+  const headerContainer = useRef<HTMLDivElement>(null);
   const moreElement = useRef<HTMLDivElement>(null);
 
   function showMore(event: React.MouseEvent<HTMLButtonElement>): void {
@@ -12,8 +15,25 @@ const Header = () => {
     moreElement.current?.setAttribute("aria-expanded", `${expanded}`);
   }
 
+  const expandNav = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>): void => {
+      event.preventDefault();
+
+      setPrimaryExpanded((prevPrimaryExpanded) => !prevPrimaryExpanded);
+      primaryElement.current?.setAttribute(
+        "aria-expanded",
+        `${!primaryExpanded}`
+      );
+      headerContainer.current?.setAttribute(
+        "aria-expanded",
+        `${!primaryExpanded}`
+      );
+    },
+    [primaryExpanded]
+  );
+
   return (
-    <header className="main-nav" aria-expanded="false">
+    <header ref={headerContainer} className="main-nav" aria-expanded="false">
       <nav className="main-nav__primary" aria-label="primary">
         <a className="main-nav__logo-link" href="#">
           <img
@@ -23,13 +43,17 @@ const Header = () => {
           />
         </a>
 
-        <button className="main-nav__trigger" aria-controls="main-nav-content">
+        <button
+          onClick={expandNav}
+          className="main-nav__trigger"
+          aria-controls="main-nav-content"
+        >
           Menu
         </button>
         <div
+          ref={primaryElement}
           id="main-nav-content"
           className="main-nav__primary-wrapper"
-          aria-hidden="false"
         >
           <ul className="main-nav__link-list-primary">
             <li className="main-nav__list-item">
